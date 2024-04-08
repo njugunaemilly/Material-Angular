@@ -4,7 +4,7 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { MaterailModules } from '../Material.Modules';
+import { MaterialModules } from '../Material.Modules';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { MaterailModules } from '../Material.Modules';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterailModules
+    MaterialModules
   ],
   providers: [
     provideClientHydration(),

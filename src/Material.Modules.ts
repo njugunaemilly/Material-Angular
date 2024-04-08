@@ -5,4 +5,4 @@ import { NgModule } from "@angular/core";
 
     ]
 })
-export class MaterailModules{}
+export class MaterialModules{}
