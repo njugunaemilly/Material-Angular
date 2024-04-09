@@ -4,7 +4,8 @@ import { MenubarComponent } from './components/menubar/menubar.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-  {path:'home', component: HomeComponent}
+  // {path: '', component: MenubarComponent},
+  {path:'', component: HomeComponent}
 ];
 
 @NgModule({
