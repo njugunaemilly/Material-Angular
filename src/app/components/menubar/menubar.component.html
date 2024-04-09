@@ -1,0 +1,40 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+    <button routerLink="" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Material UI Tutorial</span>
+    <span class="example-spacer"></span>
+    <button routerLink="" mat-button>Home</button>
+    <button [matMenuTriggerFor]="lvl1master" mat-button>Master</button>
+    <mat-menu #lvl1master = 'matMenu'>
+        <button [matMenuTriggerFor]="company" mat-menu-item>Company</button>
+        <button [matMenuTriggerFor]="customer" mat-menu-item>Customer</button>
+        <button [matMenuTriggerFor]="product" mat-menu-item>Product</button>
+
+        <mat-menu #company>
+        <button mat-menu-item>Term</button>
+        <button mat-menu-item>Tax</button>
+        <button mat-menu-item>Currency</button>
+        </mat-menu>
+
+        <mat-menu #customer>
+            <button mat-menu-item>Customer Type</button>
+            <button mat-menu-item>Tax</button>
+            </mat-menu>
+
+            <mat-menu #product>
+                <button mat-menu-item>Category</button>
+                <button  [matMenuTriggerFor]="variant" mat-menu-item>Variant</button>
+                <button mat-menu-item>UOM</button>
+                </mat-menu>
+
+                <mat-menu #variant>
+                    <button mat-menu-item>Color</button>
+                    <button mat-menu-item>Size</button>
+                    </mat-menu>
+
+    </mat-menu>
+    <button mat-button>About</button>
+    <button mat-button>Contact</button>
+<button mat-raised-button color="accent">Sign Up</button>
+</mat-toolbar>
