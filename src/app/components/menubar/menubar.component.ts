@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './menubar.component.scss'
 })
 export class MenubarComponent {
+  badgevisible = false;
 
+  badgeVisibility(){
+    this.badgevisible = true;
+  }
 }

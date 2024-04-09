@@ -37,4 +37,7 @@
     <button mat-button>About</button>
     <button mat-button>Contact</button>
 <button mat-raised-button color="accent">Sign Up</button>
+<button (click)="badgeVisibility()" mat-icon-button>
+    <mat-icon matBadge="15" [matBadgeHidden]="badgevisible" matBadgeColor="accent" matBadgeSize="small">notifications</mat-icon>
+</button>
 </mat-toolbar>
