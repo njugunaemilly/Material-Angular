@@ -5,10 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MaterialModules } from '../Material.Modules';
+import { MenubarComponent } from './components/menubar/menubar.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenubarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
