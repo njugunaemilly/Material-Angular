@@ -1,0 +1,10 @@
+<h3>Autocomplete</h3>
+
+<form >
+    <mat-form-field appearance="outline">
+       <input matInput placeholder="Autocomplete" [matAutocomplete]="auto" [formControl] = "formcontrol"/> 
+    </mat-form-field>
+   <mat-autocomplete autoActiveFirstOption #auto>
+    <mat-option *ngFor="let color of filterOptionslist | async" value="{{color.code}}"> {{color.code }} | {{color.name }}</mat-option>
+   </mat-autocomplete>
+</form>
