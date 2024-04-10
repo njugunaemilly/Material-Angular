@@ -6,7 +6,9 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatBadgeModule} from "@angular/material/badge"
 import { MatSidenavModule } from "@angular/material/sidenav"
 import { MatListModule } from "@angular/material/list";
-import { MatCardModule } from "@angular/material/card"
+import { MatCardModule } from "@angular/material/card";
+import { MatSliderModule } from "@angular/material/slider"
+
 
 
 @NgModule({
@@ -19,6 +21,7 @@ import { MatCardModule } from "@angular/material/card"
         MatSidenavModule,
         MatListModule,
         MatCardModule,
+        MatSliderModule,
     ]
 })
 export class MaterialModules{}

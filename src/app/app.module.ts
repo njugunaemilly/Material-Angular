@@ -8,18 +8,23 @@ import { MaterialModules } from '../Material.Modules';
 import { MenubarComponent } from './components/menubar/menubar.component';
 import { HomeComponent } from './components/home/home.component';
 import { CardComponent } from './components/card/card.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenubarComponent,
     HomeComponent,
-    CardComponent
+    CardComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModules
+    MaterialModules,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration(),
