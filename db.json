@@ -1,0 +1,72 @@
+{
+    "customers":[
+        {
+            "code": 1,
+            "name": "Test user 1",
+            "phone": "23453765",
+            "email": "test@inst.com",
+            "status": "active"            
+        },
+        {
+            "code": 2,
+            "name": "Test user 2",
+            "phone": "23453765",
+            "email": "test@inst.com",
+            "status": "active"            
+        }, {
+            "code": 3,
+            "name": "Test user 3",
+            "phone": "23453765",
+            "email": "test@inst.com",
+            "status": "active"            
+        }, {
+            "code": 4,
+            "name": "Test user 4",
+            "phone": "23453765",
+            "email": "test@inst.com",
+            "status": "active"            
+        }, {
+            "code": 5,
+            "name": "Test user 5",
+            "phone": "23453765",
+            "email": "test@inst.com",
+            "status": "active"            
+        }, {
+            "code": 6,
+            "name": "Test user 6",
+            "phone": "23453765",
+            "email": "test@inst.com",
+            "status": "active"            
+        }, {
+            "code": 7,
+            "name": "Test user 7",
+            "phone": "23453765",
+            "email": "test@inst.com",
+            "status": "active"            
+        }, {
+            "code": 8,
+            "name": "Test user 8",
+            "phone": "23453765",
+            "email": "test@inst.com",
+            "status": "inactive"            
+        }, {
+            "code": 9,
+            "name": "Test user 9",
+            "phone": "23453765",
+            "email": "test@inst.com",
+            "status": "inactive"            
+        }, {
+            "code": 10,
+            "name": "Test user 10",
+            "phone": "23453765",
+            "email": "test@inst.com",
+            "status": "inactive"            
+        },{
+            "code": 11,
+            "name": "Test user 11",
+            "phone": "23453765",
+            "email": "test@inst.com",
+            "status": "active"            
+        }
+    ]
+}
