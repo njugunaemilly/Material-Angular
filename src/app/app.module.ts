@@ -10,6 +10,8 @@ import { HomeComponent } from './components/home/home.component';
 import { CardComponent } from './components/card/card.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TableComponent } from './components/table/table.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MenubarComponent,
     HomeComponent,
     CardComponent,
-    SliderComponent
+    SliderComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModules,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration(),
