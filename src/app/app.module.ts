@@ -12,6 +12,7 @@ import { SliderComponent } from './components/slider/slider.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TableComponent } from './components/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormdesignComponent } from './components/formdesign/formdesign.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     CardComponent,
     SliderComponent,
-    TableComponent
+    TableComponent,
+    FormdesignComponent
   ],
   imports: [
     BrowserModule,

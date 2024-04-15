@@ -1,0 +1,95 @@
+<form [formGroup]="customerForm" (ngSubmit)="saveCustomer()">
+<mat-card>
+    <mat-card-content>
+
+        <mat-form-field class="mat-50">
+            <mat-label>
+                Name
+            </mat-label>
+            <input formControlName="name" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="mat-50">
+            <mat-label>
+                Email
+            </mat-label>
+            <input formControlName="email" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="mat-50">
+            <mat-label>
+                Phone
+            </mat-label>
+            <input  formControlName="phone" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="mat-50">
+            <mat-label>
+                Country
+            </mat-label>
+            <!-- <input matInput> -->
+            <mat-select formControlName="country">
+                <mat-option [value]="country" *ngFor="let country of countryList">
+                    {{country}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>
+                Address
+            </mat-label>
+            <!-- <input matInput> -->
+            <textarea formControlName="address" matInput></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="mat-50">
+            <mat-label>
+                Term
+            </mat-label>
+            <input formControlName="term" [matAutocomplete]="auto" matInput>
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                <mat-option *ngFor="let item of termList" [value]="item">
+                    {{item}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+        <mat-form-field class="mat-50">
+            <mat-label>
+                Date of Birth
+            </mat-label>
+            <input formControlName="dob" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+       <div>
+        <mat-radio-group formControlName="gender" color="primary">
+            <mat-radio-button value="Female">
+                Female
+            </mat-radio-button>
+               
+            <mat-radio-button value="Male">
+                Male
+            </mat-radio-button>
+        </mat-radio-group>
+        <mat-checkbox formControlName="status" color="warn">
+            Is Active
+        </mat-checkbox>
+       </div>
+    </mat-card-content>
+    <mat-card-footer>
+        <div style="margin: 2%; text-align: right;">
+            <button type="submit" mat-raised-button color="primary">
+                Save
+            </button>
+            <button mat-raised-button color="warn" (click)="clearForm()">
+                Cancel
+            </button>
+        </div>
+    </mat-card-footer>
+</mat-card>
+
+</form>

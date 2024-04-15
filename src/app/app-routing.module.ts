@@ -5,13 +5,15 @@ import { HomeComponent } from './components/home/home.component';
 import { CardComponent } from './components/card/card.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { TableComponent } from './components/table/table.component';
+import { FormdesignComponent } from './components/formdesign/formdesign.component';
 
 const routes: Routes = [
   // {path: '', component: MenubarComponent},
   {path:'', component: HomeComponent}, 
   {path: 'card', component: CardComponent},
   {path: 'slider', component: SliderComponent},
-  {path: 'table', component: TableComponent}
+  {path: 'table', component: TableComponent},
+  {path: 'forms', component: FormdesignComponent}
 
 ];
 
