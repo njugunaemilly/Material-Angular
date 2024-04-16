@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TableComponent } from './components/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormdesignComponent } from './components/formdesign/formdesign.component';
+import { PopupComponent } from './components/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormdesignComponent } from './components/formdesign/formdesign.componen
     CardComponent,
     SliderComponent,
     TableComponent,
-    FormdesignComponent
+    FormdesignComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,

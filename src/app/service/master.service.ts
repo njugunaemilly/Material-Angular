@@ -25,4 +25,13 @@ export class MasterService {
   GetCustomer():Observable<Customer[]>{
     return this.http.get<Customer[]>(this.url);
   }
+
+  SaveCustomer(data: any){
+    console.log(data)
+    return this.http.post(this.url, data);
+  }
+
+  GetCustomerByCode(code:any){
+    return this.http.get(this.url + code);
+  }
 }

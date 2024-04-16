@@ -19,6 +19,7 @@ import { MatRadioModule } from "@angular/material/radio";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatSelectModule } from "@angular/material/select";
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -46,6 +47,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
         MatCheckboxModule,
         MatSelectModule,
         MatAutocompleteModule,
+        MatDialogModule,
     ]
 })
 export class MaterialModules{}
