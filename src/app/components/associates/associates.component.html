@@ -1,0 +1,38 @@
+<form [formGroup]="myForm" (ngSubmit)="saveAssociate()">
+  <mat-card>
+    <mat-card-content>
+      <mat-form-field class="mat-50">
+        <mat-label>Associate</mat-label>
+        <mat-select (selectionChange)="cuschange($event.value)" formControlName="id">
+          <mat-option [value]="item.id" *ngFor="let item of associateList"> {{item.name}} </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <a (click)="addAddress()" mat-raised-button color="primary">Add Address</a>
+      <div formArrayName="address">
+        <mat-card  *ngFor="let item of getAddress.controls;let i = index" [formGroupName]="i" class="mat-elevation-z8">
+            <mat-card-content>
+                <h1>Address - {{i+1}}</h1>
+                <mat-form-field class="mat-50">
+                    <mat-label>Title</mat-label>
+                    <input formControlName="title" matInput>
+                  </mat-form-field>
+                  <mat-form-field class="mat-50">
+                    <mat-label>Country</mat-label>
+                    <input (keyup)="autochange(i)" matInput formControlName="country" [matAutocomplete]="auto">
+                    <mat-autocomplete #auto>
+                        <mat-option [value]="item.code" *ngFor="let item of filterOptions | async">{{item.name}}</mat-option>
+                    </mat-autocomplete>
+                  </mat-form-field>
+                  <mat-form-field class="mat-50">
+                    <mat-label>Title</mat-label>
+                    <textarea matInput formControlName="fulladdress"></textarea>
+                  </mat-form-field>
+            </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button type="submit" mat-raised-button color="primary">Save</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

@@ -6,6 +6,7 @@ import { CardComponent } from './components/card/card.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { TableComponent } from './components/table/table.component';
 import { FormdesignComponent } from './components/formdesign/formdesign.component';
+import { AssociatesComponent } from './components/associates/associates.component';
 
 const routes: Routes = [
   // {path: '', component: MenubarComponent},
@@ -13,8 +14,8 @@ const routes: Routes = [
   {path: 'card', component: CardComponent},
   {path: 'slider', component: SliderComponent},
   {path: 'table', component: TableComponent},
-  {path: 'forms', component: FormdesignComponent}
-
+  {path: 'forms', component: FormdesignComponent},
+  {path: 'associates', component: AssociatesComponent}
 ];
 
 @NgModule({

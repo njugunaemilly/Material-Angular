@@ -123,5 +123,37 @@
       "phone": "",
       "status": true
     }
+  ],
+
+  "associate":[
+    {
+      "id":1,
+      "name": "lilly linda",
+      "address": []
+    },
+    {
+      "id":2,
+      "name": "Terrain Main",
+      "address": []
+    }, {
+      "id":3,
+      "name": "Sally Lockhart",
+      "address": []
+    }
+  ],
+
+  "country":[
+    {
+      "code": "Kenya",
+      "name": "Kenya"
+    },
+    {
+      "code": "South Africa",
+      "name": "South Africa"
+    },
+    {
+      "code": "Tanzania",
+      "name": "Tanzania"
+    }
   ]
 }
