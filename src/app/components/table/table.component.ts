@@ -6,6 +6,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
+import { UserdetailComponent } from '../userdetail/userdetail.component';
 
 @Component({
   selector: 'app-table',
@@ -42,16 +43,21 @@ loadCustomer(){
   }
 
   editCustomer(code:any){
-    this.openPopup(code, 'Edit Customer');
+    this.openPopup(code, 'Edit Customer', PopupComponent);
+    console.log(code)
+  }
+
+  detailCustomer(code:any){
+    this.openPopup(code, 'Edit Customer', UserdetailComponent);
     console.log(code)
   }
 
   addCustomer(){
-    this.openPopup(0, 'Add Customer')
+    this.openPopup(0, 'Add Customer', PopupComponent)
   }
 
-  openPopup(code:any, title:any){
-    var _popup = this.dialog.open(PopupComponent,{
+  openPopup(code:any, title:any, component:any){
+    var _popup = this.dialog.open(component,{
       width: '40%',
       height: '400px',
       enterAnimationDuration: '1000ms',

@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'slider', component: SliderComponent},
   {path: 'table', component: TableComponent},
   {path: 'forms', component: FormdesignComponent},
-  {path: 'associates', component: AssociatesComponent}
+  {path: 'associates/', component: AssociatesComponent}
 ];
 
 @NgModule({

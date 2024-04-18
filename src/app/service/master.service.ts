@@ -43,7 +43,7 @@ export class MasterService {
   }
 
   GetAssociateByCode(code:any){
-    return this.http.get('http://localhost:3000/associate/'+code);
+    return this.http.get('http://localhost:3000/associate'+code);
   }
 
   GetCountry():Observable<Country[]>{
@@ -51,6 +51,6 @@ export class MasterService {
   }
 
   SaveAssociate(data: any, code:any){
-    return this.http.put('http://localhost:3000/associate/'+ code, data);
+    return this.http.put('http://localhost:3000/associate'+ code, data);
   }
 }
