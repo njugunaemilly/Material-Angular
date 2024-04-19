@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Colorentity } from '../colorentity';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Customer } from '../customer';
 import { Country } from '../country';
 
@@ -30,13 +30,33 @@ export class MasterService {
   }
 
   SaveCustomer(data: any){
-    console.log(data)
+    // console.log(data)
     return this.http.post(this.url, data);
   }
 
-  GetCustomerByCode(code:any){
-    return this.http.get(this.url + code);
-  }
+  //  GetCustomerByCode(code:any){
+  //   return this.http.get(this.url + code);
+  // }
+
+//   GetCustomerByCode(code: any): Observable<Customer> {
+//     const urlCode = `${this.url}${code}`;
+//     return this.http.get<Customer>(urlCode);
+// }
+
+GetCustomerByCode(id: string): Observable<Customer> {
+  const urlWithId = `${this.url}${id}`;
+  return this.http.get<Customer>(urlWithId);
+}
+
+// getCustomerIdByCode(code: number): Observable<string | undefined> {
+//   return this.http.get<Customer[]>(this.url).pipe(
+//     map((customers) => {
+//       const customer = customers.find(c => c.code === code);
+//       return customer ? customer.id : undefined;
+//     })
+//   );
+// }
+
 
   GetAssociate(){
     return this.http.get(this.urlAssociates);
@@ -52,5 +72,11 @@ export class MasterService {
 
   SaveAssociate(data: any, code:any){
     return this.http.put('http://localhost:3000/associate'+ code, data);
+  }
+
+  
+  DeleteUser(code: number): Observable<any> {
+    const deleteUrl = `${this.url}${code}`;
+    return this.http.delete(deleteUrl);
   }
 }

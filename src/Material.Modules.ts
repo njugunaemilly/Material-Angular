@@ -20,9 +20,8 @@ import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatSelectModule } from "@angular/material/select";
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDialogModule} from '@angular/material/dialog';
-
-
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -48,6 +47,8 @@ import {MatDialogModule} from '@angular/material/dialog';
         MatSelectModule,
         MatAutocompleteModule,
         MatDialogModule,
+        MatSnackBarModule,
+        MatTabsModule
     ]
 })
 export class MaterialModules{}

@@ -1,7 +1,7 @@
     <h1 mat-dialog-title>
     {{inputData.title}}
     </h1>
-    <div mat-dialog-content>
+    <div mat-dialog-content *ngIf="custdata">
         <h2>Customer Name: <b>{{custdata.name}}</b></h2>
         <h2>Customer Email: <b>{{custdata.email}}</b></h2>
         <h2>Customer Phone: <b>{{custdata.phone}}</b></h2>

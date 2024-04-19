@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { error } from 'console';
 import { MasterService } from '../../service/master.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-popup',
@@ -15,7 +16,7 @@ export class PopupComponent implements OnInit{
   editData: any;
   closemessage = 'Closed using directive'
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data:any, private ref:MatDialogRef<PopupComponent>, private builder: FormBuilder, private service: MasterService){ }
+  constructor(@Inject(MAT_DIALOG_DATA) public data:any, private ref:MatDialogRef<PopupComponent>, private builder: FormBuilder, private service: MasterService, private snackbar: MatSnackBar){ }
 
   ngOnInit(): void {
     this.inputdata = this.data
@@ -25,7 +26,7 @@ export class PopupComponent implements OnInit{
   }
 
   setPopUpData(code:any){
-    this,this.service.GetCustomerByCode(code).subscribe(item =>{
+    this.service.GetCustomerByCode(code).subscribe(item =>{
       this.editData = item;
       this.myForm.setValue({name: this.editData.name, email: this.editData.email, phone: this.editData.phone, status: this.editData.status})
     })
@@ -38,6 +39,7 @@ export class PopupComponent implements OnInit{
     status: this.builder.control(true),
   })
 
+
   closePopup(){
     this.ref.close('Closed using function');
   }
@@ -46,6 +48,15 @@ export class PopupComponent implements OnInit{
     this.service.SaveCustomer(this.myForm.value).subscribe(res =>{
       this.closePopup();
       console.log(this.myForm.value)
+      console.log(res)
+      this.snackbar.open('User saved successfully', 'Close', {
+        verticalPosition: 'top',
+        horizontalPosition:'end',
+        duration: 5000
+      });
+    // }
     })
   }
+
+ 
 }
