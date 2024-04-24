@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { error } from 'console';
 import { MasterService } from '../../service/master.service';
@@ -14,49 +14,66 @@ export class PopupComponent implements OnInit{
  
   inputdata:any;
   editData: any;
-  closemessage = 'Closed using directive'
+  closemessage = 'Closed using directive';
+  myForm!: FormGroup;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data:any, private ref:MatDialogRef<PopupComponent>, private builder: FormBuilder, private service: MasterService, private snackbar: MatSnackBar){ }
 
+
   ngOnInit(): void {
-    this.inputdata = this.data
-    if(this.inputdata.code > 0){
-      this.setPopUpData(this.inputdata.code)
+    if (this.data) {
+      this.inputdata = this.data;
+      console.log(this.data.data)
+      console.log(this.data.code);
+      this.setPopUpData(this.inputdata.code);
+    } else {
+      console.log('No data provided');
     }
+  
+    this.myForm = this.builder.group({
+      name: [''],
+      email: [''],
+      phone: [''],
+      status: [true],
+    });
   }
+  
 
-  setPopUpData(code:any){
-    this.service.GetCustomerByCode(code).subscribe(item =>{
-      this.editData = item;
-      this.myForm.setValue({name: this.editData.name, email: this.editData.email, phone: this.editData.phone, status: this.editData.status})
-    })
+
+  setPopUpData(code: any) {
+    this.service.GetCustomerByCode(code).subscribe({
+      next: (item: any) =>{
+      this.editData = item
+      console.log(item)
+      this.myForm.setValue({
+        name: this.editData.name,
+        email: this.editData.email,
+        phone: this.editData.phone,
+        status: this.editData.status
+      })
+   },error: ()=>{
+    console.log('error msg')
+   }
+   });
   }
-
-  myForm = this.builder.group({
-    name: this.builder.control(''),
-    email: this.builder.control(''),
-    phone: this.builder.control(''),
-    status: this.builder.control(true),
-  })
-
 
   closePopup(){
     this.ref.close('Closed using function');
   }
 
-  saveUser(){
-    this.service.SaveCustomer(this.myForm.value).subscribe(res =>{
+
+  saveUser() {
+    const formData = { ...this.myForm.value, code: this.inputdata.code };
+    this.service.SaveCustomer(formData).subscribe(res => {
       this.closePopup();
-      console.log(this.myForm.value)
-      console.log(res)
+      console.log(formData);
+      console.log(res);
       this.snackbar.open('User saved successfully', 'Close', {
         verticalPosition: 'top',
-        horizontalPosition:'end',
+        horizontalPosition: 'end',
         duration: 5000
       });
-    // }
-    })
+    });
   }
-
- 
+  
 }

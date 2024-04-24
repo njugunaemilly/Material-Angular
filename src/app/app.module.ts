@@ -16,6 +16,8 @@ import { FormdesignComponent } from './components/formdesign/formdesign.componen
 import { PopupComponent } from './components/popup/popup.component';
 import { AssociatesComponent } from './components/associates/associates.component';
 import { UserdetailComponent } from './components/userdetail/userdetail.component';
+import { DeleteuserComponent } from './components/deleteuser/deleteuser.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { UserdetailComponent } from './components/userdetail/userdetail.componen
     FormdesignComponent,
     PopupComponent,
     AssociatesComponent,
-    UserdetailComponent
+    UserdetailComponent,
+    DeleteuserComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

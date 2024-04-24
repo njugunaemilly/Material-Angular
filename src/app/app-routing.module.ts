@@ -10,10 +10,10 @@ import { AssociatesComponent } from './components/associates/associates.componen
 
 const routes: Routes = [
   // {path: '', component: MenubarComponent},
-  {path:'', component: HomeComponent}, 
+  {path:'home', component: HomeComponent}, 
   {path: 'card', component: CardComponent},
   {path: 'slider', component: SliderComponent},
-  {path: 'table', component: TableComponent},
+  {path: '', component: TableComponent},
   {path: 'forms', component: FormdesignComponent},
   {path: 'associates/', component: AssociatesComponent}
 ];

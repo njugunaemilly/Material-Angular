@@ -62,7 +62,7 @@ export class AssociatesComponent implements OnInit {
   private _listfilter(value:string):Country[]{
     const searchvalue = value.toLocaleLowerCase();
     return this.countryList.filter(option => option.name.toLocaleLowerCase().includes(searchvalue) ||
-  option.code.toLocaleLowerCase().includes(searchvalue))
+  option.id.toLocaleLowerCase().includes(searchvalue))
   }
 
   addAddress(){
@@ -88,8 +88,8 @@ export class AssociatesComponent implements OnInit {
     return this.addressArray = this.myForm.get("address") as FormArray;
    }
 
-   cuschange(code: any) {
-    this.service.GetAssociateByCode(code).subscribe(res => {
+   cuschange(id: any) {
+    this.service.GetAssociateByCode(id).subscribe(res => {
       this.editdata = res;
 
       this.addressArray=this.myForm.get("address") as FormArray;

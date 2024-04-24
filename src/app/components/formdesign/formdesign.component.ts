@@ -14,6 +14,7 @@ export class FormdesignComponent implements OnInit {
 
   ngOnInit(): void {
     this.customerForm.setValue({
+      code:'',
       name: '',
       email: '',
       phone: '',
@@ -32,6 +33,7 @@ export class FormdesignComponent implements OnInit {
       '',
       Validators.compose([Validators.required, Validators.required])
     ),
+    code: this.fb.control(''),
     phone: this.fb.control('', Validators.required),
     country: this.fb.control('', Validators.required),
     address: this.fb.control('', Validators.required),

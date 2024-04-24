@@ -89,6 +89,7 @@
       "id": "5b92"
     },
     {
+      "code": 12,
       "id": "a5d5",
       "name": "lilly linda",
       "email": "lil@inst.com",
@@ -96,13 +97,7 @@
       "status": true
     },
     {
-      "id": "be9d",
-      "name": "",
-      "email": "",
-      "phone": "",
-      "status": true
-    },
-    {
+      "code": 14,
       "id": "8b21",
       "name": "Kai Notebook",
       "email": "kai@inst.com",
@@ -110,50 +105,46 @@
       "status": true
     },
     {
-      "id": "10d5",
-      "name": "Arnell Armon",
-      "email": "aa@inst.com",
-      "phone": "66754444",
-      "status": true
-    },
-    {
-      "id": "2936",
-      "name": "",
-      "email": "",
-      "phone": "",
-      "status": true
+      "id": "c50c",
+      "name": "Kai Notebook2",
+      "email": "kai@inst.com",
+      "phone": "998757765",
+      "status": true,
+      "code": "8b21"
     }
   ],
-
-  "associate":[
+  "associate": [
     {
-      "id":1,
+      "id": "1",
       "name": "lilly linda",
       "address": []
     },
     {
-      "id":2,
+      "id": "2",
       "name": "Terrain Main",
       "address": []
-    }, {
-      "id":3,
+    },
+    {
+      "id": "3",
       "name": "Sally Lockhart",
       "address": []
     }
   ],
-
-  "country":[
+  "country": [
     {
       "code": "Kenya",
-      "name": "Kenya"
+      "name": "Kenya",
+      "id": "cdc5"
     },
     {
       "code": "South Africa",
-      "name": "South Africa"
+      "name": "South Africa",
+      "id": "2f48"
     },
     {
       "code": "Tanzania",
-      "name": "Tanzania"
+      "name": "Tanzania",
+      "id": "649c"
     }
   ]
 }
